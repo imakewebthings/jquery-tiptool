@@ -100,7 +100,6 @@
         }
 
         this.$tooltip.css({
-          position: 'absolute',
           left: left,
           top: top
         });
