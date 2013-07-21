@@ -7,7 +7,7 @@ Tiptool is a barebones tooltip plugin.
 ## Basic Usage
 
 ```js
-$('.something-with-a-title').tiptool()
+$('.something-with-a-title').tiptool();
 ```
 
 This will take the text in the `title` attribute and show it in a stylable tooltip. The tooltip HTML is injected as the next sibling and looks like this:
