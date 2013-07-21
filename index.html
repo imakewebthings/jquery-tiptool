@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tiptool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>jQuery Tiptool</h1>
+    <h2>v0.0.1</h2>
+    <ul class="header-links">
+      <li><a href="https://github.com/imakewebthings/jquery-tiptool/zipball/latest">Download</a></li>
+      <li><a href="https://github.com/imakewebthings/jquery-tiptool">GitHub</a></li>
+      <li><a href="https://github.com/imakewebthings/jquery-tiptool/blob/master/README.md">Docs</a></li>
+      <li><a href="./test">Tests</a></li>
+    </ul>
+
+    <div class="demo">
+      <div class="controls">
+        <label for="position">Position</label>
+        <select id="position">
+          <option value="bottom">Bottom</option>
+          <option value="top">Top</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="top left">Top Left</option>
+          <option value="top right">Top Right</option>
+          <option value="bottom left">Bottom Left</option>
+          <option value="bottom right">Bottom Right</option>
+        </select>
+      </div>
+
+      <div class="tipped" title="Title Text">Hover Me</div>
+
+      <pre><code>$('.tipped').tiptool({
+  position: '<span class="position-code">bottom</span>'
+});</code></pre>
+    </div>
+  </div>
+
+  <script src="test/lib/jquery/jquery.js"></script>
+  <script src="jquery-tiptool.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var $positionCode = $('.position-code');
+      var $tipped = $('.tipped');
+      $tipped.tiptool();
+      $('select').on('change', function() {
+        var positionVal = $(this).val();
+        $tipped.tiptool('destroy').tiptool({
+          position: positionVal
+        });
+        $positionCode.text(positionVal);
+      });
+    });
+  </script>
+</body>
+</html>
