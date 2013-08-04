@@ -109,10 +109,8 @@
     $.fn.tiptool = function() {
       var method = options = arguments[0];
 
-      if (('ontouchstart' in window) ||
-          (navigator.maxTouchPoints > 0) ||
-          (navigator.msMaxTouchPoints > 0)) {
-        return;
+      if ($.fn.tiptool.isTouch) {
+        return this;
       }
 
       return this.each(function() {
@@ -133,5 +131,8 @@
       textSelector: '.tiptool-text',
       position: 'bottom'
     };
+    $.fn.tiptool.isTouch = ('ontouchstart' in window) ||
+                           (navigator.maxTouchPoints > 0) ||
+                           (navigator.msMaxTouchPoints > 0);
   });
 })();
