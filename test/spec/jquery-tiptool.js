@@ -2,6 +2,7 @@ describe('jQuery Tiptool', function() {
   var $tipped, $tool, $returned;
 
   beforeEach(function() {
+    $.fn.tiptool.isTouch = false;
     setFixtures('<div class="tipped" title="test title" />');
     $tipped = $('.tipped');
   });

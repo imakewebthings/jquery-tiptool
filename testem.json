@@ -1,0 +1,16 @@
+{
+  "framework": "jasmine",
+  "launch_in_dev": [
+    "Chrome",
+    "PhantomJS"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ],
+  "src_files": [
+    "test/lib/jquery/jquery.js",
+    "jquery-tiptool.js",
+    "test/lib/jasmine-jquery/jasmine-jquery.js",
+    "test/spec/*.js"
+  ]
+}
